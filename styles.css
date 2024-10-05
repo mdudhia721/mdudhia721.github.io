@@ -1,0 +1,76 @@
+:root {
+    --main-bg-color: rgba(0, 0, 0, 0.72);
+    --option-color: rgba(0,0,0,0.8); 
+    --hover-option-color: rgba(0,0,0,0.64);
+    --border-color: darkslategray;
+    --default-text-color: white;
+    --second-text-color: rgba(72,158,128,0.64);
+    --default-font: "Roboto Mono", monospace;
+}
+
+body {
+    background-image: url('images/bg/lonecypress.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: var(--default-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    width: 64%;
+    margin: 128px auto;
+    position: relative;
+}
+
+nav {
+    display:flex;
+    justify-content: flex-end;
+    float: right;
+}
+
+nav a {
+    color: var(--default-text-color);
+    text-decoration: none;
+    font-size: 16px;
+
+    padding: 12px 12px 8px;
+    margin-right: 4px;
+    margin-bottom: -4px;
+
+    background-color: var(--option-color);
+    border-radius: 12px 12px 0px 0px;
+    border: solid var(--border-color);
+    border-width: 4px;
+    
+    transition: all 1s ease;
+}
+
+nav a.active {
+    background-color: var(--main-bg-color);
+    border-bottom-color: #38383A;
+    transition: none;
+}
+
+nav a:not(.active):hover {
+    background-color: var(--hover-option-color);
+}
+
+.main-box {
+    padding: 8px 24px 24px 24px;
+    border: 4px solid var(--border-color);
+    background-color: var(--main-bg-color);
+    border-radius: 4px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    clear: both;
+}
+
+.main-box h1 {
+    color: var(--second-text-color);
+}
+
+.main-box p {
+    color: var(--default-text-color);
+}
