@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Manav Dudhia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/icons/macha.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('images/bg/treesandlines.png');
+        }
+
+        .container {
+            width: 64%;
+            margin: 80px auto;
+            position: relative;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .box {
+            margin: 0px 0px 16px 0px;
+        }
+
+        .main-box {
+            width: 80%;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .right-box {
+            float: right;
+            margin: 0px 0px 0px 16px;
+        }
+
+        .project-box {
+            background: var(--clear);
+            margin: 16px 0px 0px 0px;
+            transition: all 1s ease;
+        }
+
+        .project-box:hover {
+            background: var(--hover-box-color);
+        }
+
+        .project-box img {
+            width: 32%;
+            float: left;
+            margin: 0px 24px 0px 0px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <nav>
+            <a class="active" href="projects.html">Projects</a>
+            <a href="index.html">Home | Contact</a>
+        </nav>
+        
+        <div class="top-box box">
+            <h1>PORTFOLIO</h1>
+            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Diam fringilla lobortis eleifend ante nec dis massa. Lorem ipsum odor amet, consectetuer adipiscing elit. Diam fringilla lobortis eleifend ante nec dis massa.</p>
+        </div>
+
+        <div class="content-container">
+            <div class="main-box box">
+                <h2>PROJECTS</h2>
+                
+                <div class="project-box box"> 
+                    <h3>Project 1</h3>
+                </div>
+
+                <div class="project-box box"> 
+                    <h3>Project 2</h3>
+                </div>
+            </div>
+    
+            <div class="right-box box">
+                <h3>SOME SMALLER PROJECTS</h3>
+
+                <div class="project-box box"> 
+                    <h3>Project 1</h3>
+                </div>
+
+                <div class="project-box box"> 
+                    <h3>Project 2</h3>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+</body>
+</html>

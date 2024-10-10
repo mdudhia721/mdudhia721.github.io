@@ -2,27 +2,26 @@
     --main-bg-color: rgba(0, 0, 0, 0.72);
     --option-color: rgba(0,0,0,0.8); 
     --hover-option-color: rgba(0,0,0,0.64);
+    --hover-box-color: rgba(255,255,255,0.08);
     --border-color: darkslategray;
     --default-text-color: white;
     --second-text-color: rgba(128, 208, 176, 0.64);
     --default-font: "Roboto Mono", monospace;
+    --clear: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: var(--main-bg-color);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--border-color);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--hover-option-color);
 }
@@ -37,12 +36,6 @@ body {
     font-style: normal;
 }
 
-.container {
-    width: 64%;
-    margin: 80px auto;
-    position: relative;
-}
-
 nav {
     display:flex;
     justify-content: flex-end;
@@ -55,8 +48,7 @@ nav a {
     font-size: 16px;
 
     padding: 12px 12px 8px;
-    margin-right: 4px;
-    margin-bottom: -4px;
+    margin: 0px 0px -4px 4px;
 
     background-color: var(--option-color);
     border-radius: 8px 8px 0px 0px;
@@ -78,7 +70,7 @@ nav a:not(.active):hover {
 
 .box {
     background-color: var(--main-bg-color);
-    padding: 24px;
+    padding: 16px;
     border: 4px solid var(--border-color);
     border-radius: 4px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -88,14 +80,30 @@ nav a:not(.active):hover {
 
 .box h1 {
     color: var(--second-text-color);
-    margin-top: 0px;
+    margin: 0px ;
+}
+
+.box h2 {
+    color: var(--second-text-color);
+    margin: 0px;
+}
+
+.box h3 {
+    color: var(--second-text-color);
+    margin: 0px;
 }
 
 .box p {
     color: var(--default-text-color);
+    margin: 0px;
 }
 
 .box a {
     color: var(--second-text-color);
     text-decoration: underline;
+}
+
+.box a:hover {
+    color: var(--default-text-color);
+    background-color: var(--second-text-color);
 }
