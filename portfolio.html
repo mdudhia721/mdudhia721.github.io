@@ -32,19 +32,28 @@
         }
 
         .main-box {
-            width: 80%;
+            width: 72%;
             margin: 0px 0px 0px 0px;
         }
 
         .right-box {
+            width: 24%;
             float: right;
             margin: 0px 0px 0px 16px;
+        }
+
+        .right-box h2{
+            font-size: 18px;
         }
 
         .project-box {
             background: var(--clear);
             margin: 16px 0px 0px 0px;
             transition: all 1s ease;
+        }
+
+        .project-box h3{
+            margin: 0px 0px 16px 0px;
         }
 
         .project-box:hover {
@@ -54,8 +63,32 @@
         .project-box img {
             width: 32%;
             float: left;
-            margin: 0px 24px 0px 0px;
+            margin: 0px 16px 0px 0px;
             border-radius: 8px;
+        }
+
+        .project-box .tags {
+            font-size: 12px;
+            color: var(--third-text-color);
+        }
+
+        .project-box p {
+            font-size: 12px;
+        }
+
+        .small-project-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .small-project-box img {
+            width: 64%;
+            margin: 0px 0px 8px 0px;
+            display: block;
+        }
+
+        .small-project-box h3 {
+            font-size: 16px;
         }
     </style>
 </head>
@@ -64,7 +97,7 @@
     
     <div class="container">
         <nav>
-            <a class="active" href="projects.html">Projects</a>
+            <a class="active" href="portfolio.html">Portfolio</a>
             <a href="index.html">Home | Contact</a>
         </nav>
         
@@ -78,23 +111,37 @@
                 <h2>PROJECTS</h2>
                 
                 <div class="project-box box"> 
-                    <h3>Project 1</h3>
+                    <h3>Takubox - Universal Leverless Controllers</h3>
+                    <img src="images/projs/raccs.png">
+                    <div class="tags">Diode, Diode, Diode, Diode</div>
+                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas pretium nullam malesuada ornare tempus per nascetur proin. Non mattis blandit non tortor senectus tincidunt cubilia. Venenatis turpis penatibus quis dis pretium ac cras. Aliquam maecenas proin luctus, auctor libero vel lacus. Metus purus adipiscing rutrum auctor egestas rhoncus in adipiscing. Conubia libero sit lacus velit porttitor dictumst taciti. Imperdiet facilisis turpis cubilia eleifend curabitur nulla. Nisi luctus volutpat congue parturient varius. Cursus conubia et montes torquent ante?</p>
                 </div>
 
                 <div class="project-box box"> 
-                    <h3>Project 2</h3>
+                    <h3>Swamp Cooler System</h3>
+                    <img src="images/projs/raccs.png">
+                    <div class="tags">Diode, Diode, Diode, Diode</div>
+                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas pretium nullam malesuada ornare tempus per nascetur proin. Non mattis blandit non tortor senectus tincidunt cubilia. Venenatis turpis penatibus quis dis pretium ac cras. Aliquam maecenas proin luctus, auctor libero vel lacus. Metus purus adipiscing rutrum auctor egestas rhoncus in adipiscing. Conubia libero sit lacus velit porttitor dictumst taciti. Imperdiet facilisis turpis cubilia eleifend curabitur nulla. Nisi luctus volutpat congue parturient varius. Cursus conubia et montes torquent ante?</p>
                 </div>
             </div>
     
             <div class="right-box box">
-                <h3>SOME SMALLER PROJECTS</h3>
+                <h2>SOME SMALLER PROJECTS</h3>
 
-                <div class="project-box box"> 
-                    <h3>Project 1</h3>
+                <div class="small-project-box project-box box"> 
+                    <h3>Modular Workstation Clamp</h3>
+                    <img src="images/projs/raccs.png">
                 </div>
 
-                <div class="project-box box"> 
-                    <h3>Project 2</h3>
+                <div class="small-project-box project-box box"> 
+                    <h3>BMO!</h3>
+                    <img src="images/projs/raccs.png">
+                    <p>something something</p>
+                </div>
+
+                <div class="small-project-box project-box box"> 
+                    <h3>This website!</h3>
+                    <p>gababa</p>
                 </div>
             </div>
         </div> 

@@ -6,6 +6,7 @@
     --border-color: darkslategray;
     --default-text-color: white;
     --second-text-color: rgba(128, 208, 176, 0.64);
+    --third-text-color: rgba(160, 232, 200, 0.64);
     --default-font: "Roboto Mono", monospace;
     --clear: rgba(0, 0, 0, 0);
 }
