@@ -7,7 +7,8 @@
     --default-text-color: white;
     --second-text-color: rgba(128, 208, 176, 0.64);
     --third-text-color: rgba(160, 232, 200, 0.64);
-    --default-font: "Roboto Mono", monospace;
+    --header-font: "Merriweather", serif;
+    --body-font: "Nunito Sans", sans-serif;
     --clear: rgba(0, 0, 0, 0);
 }
 
@@ -31,16 +32,21 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: var(--default-font);
     font-optical-sizing: auto;
+    font-family: var(--body-font);
     font-weight: 400;
     font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
 }
 
 nav {
     display:flex;
     justify-content: flex-end;
     float: right;
+    font-family: var(--header-font);
 }
 
 nav a {
