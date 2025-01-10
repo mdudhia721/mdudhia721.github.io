@@ -86,16 +86,19 @@ nav a:not(.active):hover {
 }
 
 .box h1 {
+    clear: both;
     color: var(--second-text-color);
     margin: 0px ;
 }
 
 .box h2 {
+    clear: both;
     color: var(--second-text-color);
     margin: 0px;
 }
 
 .box h3 {
+    clear: both;
     color: var(--second-text-color);
     margin: 0px;
 }
@@ -113,4 +116,8 @@ nav a:not(.active):hover {
 .box a:hover {
     color: var(--default-text-color);
     background-color: var(--second-text-color);
+}
+
+.box li {
+    color: var(--default-text-color);
 }

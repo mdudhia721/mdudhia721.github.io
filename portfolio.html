@@ -32,7 +32,6 @@
 
         .main-box {
             width: 72%;
-            margin: 0px 0px 0px 0px;
         }
 
         .right-box {
@@ -67,21 +66,18 @@
             color: var(--third-text-color);
         }
 
-        .see-more {
-            text-align: right; /* Aligns text to the right */
-            font-size: 14px;
-            margin: 4px 0px 0px 0px;
-            font-family: var(--default-font);
-        }
-
         .small-project-box {
             display: flex;
             flex-direction: column;
         }
 
+        .small-project-box p {
+            margin: 16px 0px 0px 0px; 
+            font-size: 14px;
+        }
+
         .small-project-box img {
             width: 100%;
-            margin: 0px 0px 8px 0px;
             display: block;
         }
     
@@ -98,7 +94,7 @@
         
         <div class="top-box box">
             <h1>PORTFOLIO</h1>
-            <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Diam fringilla lobortis eleifend ante nec dis massa. Lorem ipsum odor amet, consectetuer adipiscing elit. Diam fringilla lobortis eleifend ante nec dis massa.</p>
+            <p>A collection of some of the projects I've worked on! I enjoy working at an intersection software and hardware, while also being able to incorporate my passion for design and user-centered products. I love incorportating 3D modeling, printing, and other forms of fabrication to turn my projects into something tangible! A copy of resume can be found <a href="images/manav_dudhia_resume.pdf">here.</a></p>
         </div>
 
         <div class="content-container">
@@ -106,19 +102,17 @@
                 <h2>PROJECTS</h2>
                 
                 <div class="project-box box"> 
-                    <h3><a href="projects/takubox.html">Takubox - Wireless Leverless Controllers</a></h3>
-                    <img src="images/portfolio/raccs.png">
-                    <div class="tags">Diode, Diode, Diode, Diode</div>
-                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas pretium nullam malesuada ornare tempus per nascetur proin. Non mattis blandit non tortor senectus tincidunt cubilia. Venenatis turpis penatibus quis dis pretium ac cras. Aliquam maecenas proin luctus, auctor libero vel lacus. Metus purus adipiscing rutrum auctor egestas rhoncus in adipiscing. Conubia libero sit lacus velit porttitor dictumst taciti. Imperdiet facilisis turpis cubilia eleifend curabitur nulla. Nisi luctus volutpat congue parturient varius. Cursus conubia et montes torquent ante?</p>
-                    <div class="see-more"><a href="projects/takubox.html">See More</a></div>
+                    <h3><a href="projects/takubox.html">Takubox - Wireless Leverless Controllers</a> | <a href="https://github.com/mdudhia721/takubox">GitHub</a> (WIP)</h3>
+                    <img src="images/portfolio/projects/takubox/takuboxmain.jpeg">
+                    <div class="tags"> C++, Embedded Systems, PCB Design, CAD, Product Design/Development</div>
+                    <p>Takubox is a wireless, leverless controller I designed used primarily for competitive fighting games. Some of the features include compatibility with PS5/PC, SOCD Cleaning, Input mode-switching, Input-display OLED, Modular directionals, Hot-swappable keys, and audio support!</p>
                 </div>
 
                 <div class="project-box box"> 
-                    <h3><a href="projects/takubox.html">Swamp Cooler System</a></h3>
-                    <img src="images/portfolio/raccs.png">
-                    <div class="tags">Diode, Diode, Diode, Diode</div>
-                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Egestas pretium nullam malesuada ornare tempus per nascetur proin. Non mattis blandit non tortor senectus tincidunt cubilia. Venenatis turpis penatibus quis dis pretium ac cras. Aliquam maecenas proin luctus, auctor libero vel lacus. Metus purus adipiscing rutrum auctor egestas rhoncus in adipiscing. Conubia libero sit lacus velit porttitor dictumst taciti. Imperdiet facilisis turpis cubilia eleifend curabitur nulla. Nisi luctus volutpat congue parturient varius. Cursus conubia et montes torquent ante?</p>
-                    <div class="see-more"><a href="projects/takubox.html">See More</a></div>
+                    <h3>Swamp Cooler System | <a href="https://github.com/mdudhia721/Swamp-Cooler">GitHub</a></h3>
+                    <img src="images/portfolio/projects/swamp cooler/Swamp Cooler.jpg">
+                    <div class="tags">Embedded Systems, Low Level Programming</div>
+                    <p>Arduino-based swamp cooler system. Focused on register-level C++ programming, using GPIO, ADC, and UART to optimize condition monitoring and automated vent/fan control. LCD interface for real-time environmental data and operational state display. Real-time event tracking to log system state transitions and user inputs.</p>
                 </div>
             </div>
     
@@ -127,20 +121,18 @@
 
                 <div class="small-project-box project-box box"> 
                     <h3>Modular Workstation Clamp</h3>
-                    <img src="images/portfolio/raccs.png">
-                    <div class="see-more"><a href="projects/takubox.html">See More</a></div>
+                    <img src="images/portfolio/small projects/modular workstation clamp.png">
+                    <p>Designed to fit a variety of clamp modules including solder fingers, pcb holder, vice, etc. Entirely 3D-printable. </p>
                 </div>
 
                 <div class="small-project-box project-box box"> 
                     <h3>BMO!</h3>
-                    <img src="images/portfolio/raccs.png">
-                    <p>something something</p>
-                    <div class="see-more"><a href="projects/takubox.html">See More</a></div>
+                    <img src="images/portfolio/small projects/BMO.png">
+                    <p style="margin: 16px 0px 0px 0px">Made in Fusion360 :)</p>
                 </div>
 
                 <div class="small-project-box project-box box"> 
-                    <h3>This website!</h3>
-                    <p>gababa</p>
+                    <h3 style="margin: 0px">This website!</h3>
                 </div>
             </div>
         </div> 

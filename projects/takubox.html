@@ -26,8 +26,9 @@
         }
 
         .left-img {
+            width: 24%;
             float: left;
-            margin: 0px 16px 0px 0px;
+            margin: 0px 16px 16px 0px;
         }
 
         .right-img {
@@ -35,8 +36,27 @@
             margin: 0px 0px 0px 16px;
         }
 
+        .center-img-container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 0px 0px 16px 0px;
+        }
+
+        .center-img-container img {
+            object-fit: contain;
+        }
+
         .main-box h1 {
-            margin: 0px 0px 12px 0px
+            margin: 0px 0px 16px 0px;
+        }
+
+        .main-box h2{
+            margin: 16px 0px 16px 0px;
+        }
+
+        .main-box p {
+            margin: 0px 0px 16px 0px;
         }
 
     </style>
@@ -46,15 +66,70 @@
     
     <div class="container">
         <nav>
-            <a href="../portfolio.html">⏎ Portfolio</a>
+            <a href="../portfolio.html">⤶ Portfolio</a>
             <a href="../index.html">Home | Contact</a>
         </nav>
         
         <div class="main-box box">
-            <h1>Takubox - Wireless Leverless Controllers</h1>
-            <div class="images">
-                <img src="../images/portfolio/projects/weasil.png" style="width: 48%;" class="left-img">
-                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Diam fringilla lobortis eleifend ante nec dis massa. Nostra mollis aptent, efficitur cubilia habitasse mauris? Fusce elementum dis nibh commodo tincidunt ex ligula. Eros pellentesque tincidunt nisi; nulla aptent commodo. Litora sit interdum pulvinar ullamcorper aptent placerat libero ornare mollis. Massa consequat ullamcorper mi aptent enim luctus fermentum inceptos. Eu praesent vitae condimentum posuere enim dictum natoque. </p>
+            <div>
+                <h1>Takubox - Wireless Leverless Controllers</h1>
+                <img src="../images/portfolio/projects/takubox/takuboxmain.jpeg" style="width: 48%;" class="left-img">
+                <p>Welcome to my documentation of the Takubox! The Takubox is a wireless, leverless controller I designed used primarily for competitive fighting games. Some of the features include </p>
+                <p>
+                    - Compatibility with PS5, PC <br>
+                    - SOCD and Input Mode-Switching, powered by Teensy <br>
+                    - Input-display OLED <br>
+                    - Modular directionals <br>
+                    - Hot-swappable keys, audio support <br>
+                </p>
+            </div>
+            
+            <div>
+                <h2>Ver 3.0</h2>
+                <img src="../images/portfolio/projects/takubox/ver3breadboard.jpg" style="width: 32%;" class="left-img">
+                <p>Version 3 is a major overhaul to the Takubox! Updates to come soon but heres an overview for now:</p>
+                <p>
+                    - Microcontroller integration (Teensy) <br> 
+                    - Input and SOCD Input mode switching via firmware <br> 
+                    - Input display OLED <br>
+                    - Thinner profile, low profile switches
+                </p>
+            </div>
+            
+            <div>
+                <h2>Ver 2.0</h2>
+                <p>Ver 2.0 was more a revision to address some of the kinks from Ver 1.0. I adjusted the schematic and PCB to address my older mistakes, including PU resistors, SOIC slots, addition of L3, R3 buttons, etc. I also changed both SOCD cleaning modes to neutral as per rules imposed for pro play by Capcom. I felt this was necessary, as if I plan on selling the controller I should make it tournament legal. Given that Capcom made Street Fighter, the most popular fighting game, it made sense to adhere to those rules.</p>
+                <p>I also made some small changes to the frame, and ended up selling some of these! While I, and those who bought them were satisfied, I'm always looking to improve my controller. I got a lot of valuable feedback, which will be addressed in Ver 3.0!</p>
+                <div class="center-img-container">
+                    <img src="../images/portfolio/projects/takubox/takuboxmain.jpeg" style="width: 24%;">      
+                    <img src="../images/portfolio/projects/takubox/ver2pcb.png" style="width: 24%;">
+                    <img src="../images/portfolio/projects/takubox/ver2schematic.png" style="width: 24%;">
+                </div>
+            </div>
+            
+            <div>
+                <h2>Ver 1.0</h2>
+                <p>My main goal for this project was to create a wireless "hitbox" controller compatible with the PS5. Naturally, the best place to start was understanding a controller that already does that, the Dualsense 5. Before starting the project, I had no electronics experience ranging from soldering, circuit design, use of various electrical tools, and especially not PCB design. A lot of this is written in retrospect, so I couldn't capture every detail, but I'll include as much as I can. I'm really thankful to everyone who helped me along the way, and especially <a href="https://acidmods.com/forum/index.php/topic,44714.0.html">this thread</a> on AcidMods.</p>
+                <img src="../images/portfolio/projects/takubox/ver1schematic.png" style="width: 32%;" class="left-img">
+                <p>The first step was to make the board's schematic, which I made using KiCad. The majority of the buttons are active-low, other than the L3 and R3 buttons which I left out in this rendition, and are connected to a row of sockets for accesible soldering. The directional buttons are a bit more complex, as the possibility to press multiple directions at the same time can occur with a leverless controller, as there is no single joystick. Most games don't address this via software, so we must include some form of SOCD cleaning. I found the most cost-effective way to be using NAND gates, initially SN7400N chips, which also aligned with what I was learning in my classes at the time (logic gates, K-maps, etc). This circuit used the Up+Down = UP and Left+Right = NEUTRAL configuration.</p>
+                <img src="../images/portfolio/projects/takubox/ver1pcb.png" style="width: 32%;" class="right-img">
+                <p>Next came designing the PCB, which was pretty straightforward once I understood the basics of KiCad. The buttons all follow a reversible design, allowing for a permanent solder or the use of hotswap sockets. The top left 4 buttons are typical tactile pushbuttons. The 2 NAND chips had a thru-hole footprint (which caused problems later).</p>
+                <img src="../images/portfolio/projects/takubox/ver1frame1.png" style="width: 32%;" class="left-img">
+                <p>Once I ordered the PCBs, I modeled the frame. This was the longest part, as I had to consistently revisit it, but I enjoyed having full control over my board's design. First I created a model of the PCB, to model the frame around. Initially, I created the top half using this clear, acrylic heavy design, but it led to some questions with desigining the back half. The back half would be a compartment for electronics and wiring so using pure acrylic would be difficult/expensive, and creating a hollow, plastic back half would clash with the front half.</p>
+                <p>With the top half for now, I moved onto assembling the physical PCB and working with the DS5 motherboard. The controller has 1 main board with 2 side boards used to handle the triggers and haptic motors. A good amount of the inputs are analog on the board (L/RT, L/R-Stick), however all the inputs on this controller will be digital, so some modification was required. The address the analog triggers, a PU resistor will be installed to 1.8V to "convert" the trigger to a digital button. The joysticks don't need to be removed, but if they are (which I am doing to keep the frame thinner), they do need to be zero'd out. To do so, I initially used resistors, but due to them being very touch sensitive, I changed to potentiometers for adaptability. </p>
+                <img src="../images/portfolio/projects/takubox/very1inprog.png" style="width: 24%;" class="right-img">
+                <img src="../images/portfolio/projects/takubox/ver1adapter.png" style="width: 24%;" class="right-img">
+                <p>Eventually I ran into a pretty big issue: the SN7400N chips require a 5V input voltage, wheras the DS5 runs on 1.8V logic. This issue was quite a big setback as I had to backtrack on a lot of the work I did before. Initially I came up with the idea to use batteries, but found this would be too inconvenient for the end user, having 2 power supplies. I found some 74LVC00 chips, which run off 1.8V. This was the best solution as it didn't require any major PCB rework, but I did have to change the frame some and purchase adapter boards.</p>
+                <p>With the frame designed, I enjoyed finally seeing all the work come together into a final assembly. I faced one final error with the directional buttons, but realized this was due to the lack of PU resistors. It was too late to revamp the circuit and design, so I soldered them directly to the back of the frame. The controller was now complete, but definitely far from perfect. Some improvements I want to include in future versions include proper integration of SOIC chips, PU resistors, stabler side buttons, solid color backing (for aesthetic reasons), inclusion of L3 and R3 buttons.</p>
+                <div class="center-img-container">
+                    <img src="../images/portfolio/projects/takubox/ver1framefront.png" style="width: 24%;">
+                    <img src="../images/portfolio/projects/takubox/ver1frameassembly.png" style="width: 24%;">
+                    <img src="../images/portfolio/projects/takubox/ver1frameback.png" style="width: 24%;">
+                </div>
+                <div class="center-img-container">
+                    <img src="../images/portfolio/projects/takubox/ver1final.png" style="width: 32%;">
+                    <img src="../images/portfolio/projects/takubox/ver1finalback.png" style="width: 32%;">
+                </div>
             </div>
         </div>
         
