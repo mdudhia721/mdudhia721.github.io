@@ -72,7 +72,7 @@
         
         <div class="main-box box">
             <div>
-                <h1>Takubox - Wireless Leverless Controllers</h1>
+                <h1>Takubox - Wireless Leverless Controllers | <a href="https://github.com/mdudhia721/takubox">GitHub</a> (WIP)</h3></h1>
                 <img src="../images/portfolio/projects/takubox/takuboxmain.jpeg" style="width: 48%;" class="left-img">
                 <p>Welcome to my documentation of the Takubox! The Takubox is a wireless, leverless controller I designed used primarily for competitive fighting games. Some of the features include </p>
                 <p>
@@ -81,7 +81,8 @@
                     - Input-display OLED <br>
                     - Modular directionals <br>
                     - Hot-swappable keys, audio support <br>
-                </p>
+                </p>    
+                
             </div>
             
             <div>
@@ -94,6 +95,12 @@
                     - Input display OLED <br>
                     - Thinner profile, low profile switches
                 </p>
+
+                <p>UPDATE: <br> First step was to get started on the firmware. Learning from earlier versions, I chose not to get too excited and skip straight to PCB and frame modeling. By using the Teensy microcontroller and incorporating firmware, I get the ability to create simpler hardware and have much more flexibility in my final product.</p>
+                
+                <img src="../images/portfolio/projects/takubox/ver3code.png" style="width: 48%;" class="right-img">
+
+                <p>This firmware was a way to apply my growing knowledge in embedded systems and OOP. The overall functionality relies around a Gamepad class with 4 main methods, setup, read, process, and output, which allows for a relatively simple program loop. Using a Gamepad class I can essentially represent a fully-functioning virtual Gamepad, while abstracting away many of the more complex details including input setup, debouncing, processing, input display, etc. The Gamepad class is a composite class that includes instances of other classes, including InputDebouncer, GamepadState, etc (more can be seen in the GitHub). These classes are mostly self-explanatory, but allow me to encapsulate seperate responsibilities and functions into distinct objects. This creates a much more digestable firmware, which makes it much easier for me to get right back to where as I periodically return to this project. The functioning display powered by the firmware can be seen in the image above!</p>
             </div>
             
             <div>
