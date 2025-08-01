@@ -12,6 +12,7 @@
             background-size: cover;
             font-family: MerchantCopy;
             color: white;
+            overflow: hidden;
         }
 
         header {
@@ -44,6 +45,7 @@
 
         .container {
             margin: 0px auto auto auto;
+            width: 56%
         }
 
         .container p {
@@ -56,7 +58,6 @@
             background-color: rgb(255, 255, 255, 0.04);
             border: 2px solid;
             border-radius: 8px;
-            width: 48%;
         }
 
         .content-box::after {
@@ -77,8 +78,10 @@
         }
 
         nav a{
+            color: white;
+            text-decoration: none;
             font-size: 1.2rem;
-            width: 102px;
+            width: 102px;   
             height: 0.8rem;
             padding: 8px;
             border-width: 2px;
@@ -90,9 +93,21 @@
             height: 1.2rem;
         }
 
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;  
+            float: right;
+        }
+
         pre {
             width: fit-content;
             margin: 8px auto;
+            font-size: clamp(0.4rem, 1vw, 0.8rem);
+        }
+
+        .flip {
+            transform: scaleX(-1);;
         }
 
     </style>
@@ -106,25 +121,22 @@
         <div class="flex-container">
             <div class="content-box">
                 <img src="/media/everhear.png">
-                <p>This site is a personal "All Blue," a single place that combines and documents all my interests. Welcome and have fun taking a look arounddd <3</p>
-                <p>[best viewed on a computer browser or else will look funky :(] </p>
+                <p>This site is a personal "All Blue," a single place that combines and documents all my interests. Also a place to learn and have fun making a website, most likely it will be a permanent WIP. Welcome and have fun taking a look arounddd <3</p>
+                <p>[ best viewed on a computer browser or else will look funky :( ] </p>
             </div>
 
             <nav>
-                <a>About</a>
-                <a>Movies</a>
-                <a>Model Kits</a>
+                <a href="">About</a>
+                <a href="">Media</a>
+                <a href="">Model Kits</a>
             </nav>
         </div>
         
-       
-
-
-<pre>
+<pre id="train">
 __________________   _______________________________________^__
   ___   ___   ___ |||  ___   ___   ___    ___ ___  |   __  ,----\
  |   | |   | |   |||| |   | |   | |   |  |   |   | |  |  | |_____\
- |   | |___| |___|||| |___| |___| |___|  | O | O | |  |  |        \
+ |___| |___| |___|||| |___| |___| |___|  | O | O | |  |  |        \
                   |||                    |___|___| |  |__|         )
 __________________|||______________________________|______________/===========================================================
                   |||                                        /----/----/----/----/----/----/----/----/----/----/----/----/----
@@ -136,11 +148,109 @@ ________________________________________________________________________________
 _____________________________________________________________________________________________________________________________
 </pre>
 
-        
+        <a href=""> Aboard the train?</a>  
     </div>
 
-    
+    <script>
+        window.addEventListener("load", () => {
+            //List of charas //120px = 68in (5'8"). Input their height in inches, the math will correct itself later.
+            const charas = [ //runTime is the time to run, so LOWER is FASTER!!
+                {src: "/media/chara/nami_run.gif", runTime: 3200, height: 48, leftFacing: true},
+                {src: "/media/chara/sanji_run.gif", runTime: 2400, height: 48, leftFacing: true},
+                {src: "/media/chara/usopp_run.gif", runTime: 3600, height: 48+12, leftFacing: true}, //This one is sized manually since its the gif isnt perfectly cropped.
+                {src: "/media/chara/luffy_run.gif", runTime: 2800, height: 48, leftFacing: true},
+                {src: "/media/chara/zoro_run.gif", runTime: 2800, height: 48, leftFacing: true},
+                {src: "/media/chara/beante_roll.gif", runTime: 16000, height: 24, leftFacing: true},
+                {src: "/media/chara/sonic_run.gif", runTime: 1000, height: 30, leftFacing: true},
+                {src: "/media/chara/makoto_walk.gif", runTime: 8800, height: 62, leftFacing: false},
+                {src: "/media/chara/citiesaviv_run.png", runTime: 5000, height: 72, leftFacing: true},
+                {src: "/media/chara/alucard_walk.gif", runTime: 5000, height: 78, leftFacing: false},
+                {src: "/media/chara/kiki_walk.gif", runTime: 5000, height: 61, leftFacing: false},
+                {src: "/media/chara/dante_run.gif", runTime: 4000, height: 76, leftFacing: true},
+                //TODO add, AC prince and bob, P lies of P, dmc3 dante, dmc3 vergil, raiden mgs2
+            ];
 
-    
+            //Seperate array to see who can still board
+            let availableCharas = [...charas];
+
+            //Coordinates for train and height to be used for character ending entry/exits
+            const train = document.getElementById("train");
+            const trainCoords = train.getBoundingClientRect();
+            const trainStationFloor = window.innerHeight - trainCoords.bottom + 32;
+            const trainDoor = trainCoords.left + 256;
+
+            //Coordinates for character entry and exit
+            const entryRight = {bottom: trainStationFloor, left: window.innerWidth};
+            const entryLeft = {bottom: trainStationFloor, left: -200};
+            const exit = {bottom: trainStationFloor, left: trainDoor};
+
+            //Function to send somebody to catch the train
+            function catchTheTrain() {
+                if (availableCharas.length === 0) return;
+                
+                //Choose a char randomly, then remove from avail
+                const charaIndex = Math.floor(Math.random() * availableCharas.length);
+                const selectedChara = availableCharas[charaIndex];
+                availableCharas.splice(charaIndex, 1);
+                
+                //assign to gif object
+                const charaGif = document.createElement("img");
+                charaGif.src = selectedChara.src;
+                
+                //Pick an entry (left or right), and adjust parameters
+                const fromLeft = Math.random() < 0.5;
+                const entry = fromLeft ? entryLeft : entryRight;
+                let duration = selectedChara.runTime;
+                if (fromLeft) duration *= 0.8; //Adjust runTime if from left.
+
+                //Init gif position, height, and add to body.
+                charaGif.style.position = `absolute`;
+                charaGif.style.bottom = `${entry.bottom}px`;
+                charaGif.style.left = `${entry.left}px`;
+                charaGif.style.height = `${selectedChara.height * (120/78)}px` //120/68 is the pixels to height conversion factor to keep each gif accurate :)
+
+                // Flip  char direction if needed
+                // If coming from left and left facing, needs flip. If coming from right and right facing, needs flip.
+                const flip = (fromLeft && selectedChara.leftFacing) || (!fromLeft && !selectedChara.leftFacing);
+                charaGif.style.transform = `translate(0, 0)${flip ? ' scaleX(-1)' : ''}`;
+                
+                document.body.appendChild(charaGif);
+
+                //Animate gif as per params
+                requestAnimationFrame(() => {
+                    //Add frame delay to make avoid glitchiness
+                    setTimeout(() => {
+                        const dx = exit.left - entry.left;
+                        charaGif.style.transition = `transform ${duration}ms linear, opacity 240ms ease-in-out`;
+                        charaGif.style.transform = `translate(${dx}px, 0px)${flip ? ' scaleX(-1)' : ''}`;
+                    }, 0);
+                });
+
+                setTimeout(() => {
+                    charaGif.style.opacity = 0;
+                }, duration - (duration * 0.08));
+
+                setTimeout(() => {
+                    charaGif.remove();
+                }, duration + 100);
+            }
+
+            function startRunningGuys(minDelay = 2000, maxDelay = 3000) {
+                function sendRandomly() {
+                    const spawntime = Math.random() * (maxDelay - minDelay) + minDelay;
+                    setTimeout(() => {
+                        catchTheTrain();
+                        sendRandomly();
+                    }, spawntime);
+                }
+                sendRandomly();
+            }
+
+            startRunningGuys();
+        });
+
+
+    </script>
+
 </body>
 </html>
